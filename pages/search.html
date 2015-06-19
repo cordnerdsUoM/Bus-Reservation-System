@@ -1,0 +1,224 @@
+<html>
+	<head>
+        <link rel="icon" href="bus_icon.png">
+		<title>Online Bus Reservation</title>
+		<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+		
+        
+        <link rel="stylesheet" type="text/css" href="decoration.css">
+        <link rel="stylesheet" type="text/css" href="searchdecoration.css">
+		<link rel="stylesheet" type="text/css" href="backslideshow.css">
+    
+		
+		
+	</head>
+	 <ul class="cb-slideshow">
+	<li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    <li><span></span></li>
+    	
+        
+	
+</ul>
+	<body onload="currentDate()">
+	<div id = "header">Search
+		</div>
+        <center>
+	<div class= "move">
+		<form name= "MyForm" action="search_result.php"  onsubmit="return validateForm()" method="post">
+            <div class = "infobox">
+            <span class = "label">From </span> <input class ="input" type = "text" name = "startP" id="q" placeholder= "Enter Starting point" onkeypress="return mask(this,event);" /><br><br> <span class = "label">
+            to</span>
+			<input class = "input" type = "text" name = "destinationP" id="r" placeholder= "Enter Destination Point" onkeypress="return mask(this,event);"/>
+	</div>	
+			<link rel="stylesheet" href="jquery-ui-1.11.4.custom/jquery-ui-themes-1.11.4/jquery-ui-themes-1.11.4/themes/smoothness/jquery-ui.css">
+			<script src="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/external/jquery/jquery.js"></script>
+			<script src="jquery-ui-1.11.4.custom/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+			<script>
+			$ (function(){
+			 $( "#datepicker" ).datepicker();
+			});			
+		</script>
+	</div>
+        <div class = "infobox moveDate">
+            <span class = "label">Date: </span>
+            <input class = "input" type="text" name = "Date" id="datepicker" placeholder="click here" value=""><br><br>
+            
+		<span class="label">Time duration </span>
+
+  <select name = "timeStart" id="timeStartid">
+  <option value="00:00:00">00:00:00</option>
+  <option value="01:00:00">01:00:00</option>
+  <option value="02:00:00">02:00:00</option>
+  <option value="03:00:00">03:00:00</option>
+  <option value="04:00:00">04:00:00</option>
+  <option value="05:00:00">05:00:00</option>
+  <option value="06:00:00">06:00:00</option>
+  <option value="07:00:00">07:00:00</option>
+  <option value="08:00:00">08:00:00</option>
+  <option value="09:00:00">09:00:00</option>
+  <option value="10:00:00">10:00:00</option>
+  <option value="11:00:00">11:00:00</option>
+  <option value="12:00:00">12:00:00</option>
+  <option value="13:00:00">13:00:00</option>
+  <option value="14:00:00">14:00:00</option>
+  <option value="15:00:00">15:00:00</option>
+  <option value="16:00:00">16:00:00</option>
+  <option value="17:00:00">17:00:00</option>
+  <option value="18:00:00">18:00:00</option>
+  <option value="19:00:00">19:00:00</option>
+  <option value="20:00:00">20:00:00</option>
+  <option value="21:00:00">21:00:00</option>
+  <option value="22:00:00">22:00:00</option>
+  <option value="23:00:00">23:00:00</option>
+  <option value="24:00:00">24:00:00</option>
+  
+</select >
+	<span class ="input">	
+	to 
+		</span>			
+  <select name = "timeEnd" id="timeEndid">
+  <option value="00:00:00">00:00:00</option>
+  <option value="01:00:00">01:00:00</option>
+  <option value="02:00:00">02:00:00</option>
+  <option value="03:00:00">03:00:00</option>
+  <option value="04:00:00">04:00:00</option>
+  <option value="05:00:00">05:00:00</option>
+  <option value="06:00:00">06:00:00</option>
+  <option value="07:00:00">07:00:00</option>
+  <option value="08:00:00">08:00:00</option>
+  <option value="09:00:00">09:00:00</option>
+  <option value="10:00:00">10:00:00</option>
+  <option value="11:00:00">11:00:00</option>
+  <option value="12:00:00">12:00:00</option>
+  <option value="13:00:00">13:00:00</option>
+  <option value="14:00:00">14:00:00</option>
+  <option value="15:00:00">15:00:00</option>
+  <option value="16:00:00">16:00:00</option>
+  <option value="17:00:00">17:00:00</option>
+  <option value="18:00:00">18:00:00</option>
+  <option value="19:00:00">19:00:00</option>
+  <option value="20:00:00">20:00:00</option>
+  <option value="21:00:00">21:00:00</option>
+  <option value="22:00:00">22:00:00</option>
+  <option value="23:00:00">23:00:00</option>
+  <option value="24:00:00">24:00:00</option>
+  
+  
+ 
+</select>
+</div>
+<div class ="infobox moveSmoke">
+<span class = "input">
+   want to smoke? </span>
+   <input class = "input" type = "radio" name = "smokeSelection" id="smokeselectionID" value="yes">Yes
+  <input class = "input" type = "radio" name = "smokeSelection" id="smokeselectionID" value="No" checked>No
+  
+		<!-- <input class = "input" type = "checkbox" name = "smokeSelection" id="smokeselectionID" value = "<?php $che; ?>"> -->
+			</div>	
+			<div class = "moveButton">
+			<button class = "btn" type="submit"  value="submit" >
+				Search
+			</button>
+			</div>
+			<script type = "text/javascript">
+				function search(){
+					var q = $('#q').val();
+					
+					$.ajax(
+							{
+								type:"POST",
+								url:"search.php",
+								data:{search.php:q},
+								success:function(dataout){
+									$("#result").html(dataout);
+								}
+							}
+					)
+				}	
+	}
+</script>
+		
+		</form>	
+        </center>
+<script>
+	
+	
+	function validateForm() {
+	
+	   var smokeselection = document.getElementById("smokeselectionID").checked;	   
+       var start = document.getElementById("timeStartid");
+	   var stop = document.getElementById("timeEndid");
+	   var startTime = start.options[start.selectedIndex].value;
+	   var endTime = stop.options[stop.selectedIndex].value;
+	   
+	 if(startTime>=endTime){
+		alert("Invalid Date Selection");
+		return false;
+	 }
+	  return true;  
+	   
+}
+
+function mask(textbox, e) 
+{
+	var charCode = (e.which) ? e.which : e.keyCode;
+    if (charCode == 32 || charCode == 46 || (charCode >= 65 && charCode <= 90) || charCode >=97 && charCode <=122) 
+    {
+        
+        return true;
+    }
+    else
+    {
+		alert("Only Letters Allowed");
+        return false;
+    }
+}
+</script>
+
+<script>
+	
+
+	function currentDate() {
+		 var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+
+		var yyyy = today.getFullYear();
+		if(dd<10){
+        dd='0'+dd
+		} 
+		if(mm<10){
+			mm='0'+mm
+		} 
+		var today = yyyy+'-'+mm+'-'+dd;
+    
+            document.getElementById("datepicker").value = today;
+         }
+</script>
+
+
+        <div id="footer-image"></div>
+     <div id="container">
+    
+   <div id="footer">
+       <span id="maintopic"><?php echo $che ?>Kalani Tours Bus Reservation<br></span>
+       <span id="subtopic">Travel in Comfort</span>
+       </div>
+</div>
+	<style>
+		.move
+		{
+			
+			margin-top:100px;
+		}
+	</style>
+        
+	</body>
+
+
+	
+</html>
